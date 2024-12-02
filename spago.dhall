@@ -22,6 +22,13 @@ to generate this file without the comments in this block.
     , "strings"
     , "node-buffer"
     , "foldable-traversable"
+    , "parsing"
+    , "partial"
+    , "arrays"
+    , "bifunctors"
+    , "either"
+    , "lists"
+    , "tuples" 
     ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
