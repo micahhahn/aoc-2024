@@ -15,6 +15,7 @@ import Node.FS.Sync (readTextFile)
 challenges :: Array Challenge
 challenges =
   [ Day1.challenge1
+  , Day1.challenge2
   ]
 
 main :: Effect (Unit)

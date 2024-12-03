@@ -1,13 +1,16 @@
 module Day1
   ( challenge1
+  , challenge2
   ) where
 
 import Prelude
 
 import Challenge (Challenge)
-import Data.Array (sort, unzip, zip)
+import Data.Array (foldl, sort, unzip, zip)
 import Data.Foldable (sum)
+import Data.Map as Map
 import Data.Maybe (Maybe(..))
+import Data.Maybe as Maybe
 import Data.Tuple (Tuple)
 import Data.Tuple.Nested ((/\))
 import Parser (Parser, crashLeft, many1, newline, number, runParser, space, sepByArray)
@@ -59,3 +62,31 @@ abs i =
     -i
   else
     i
+
+challenge2 :: Challenge
+challenge2 =
+  { name: "Day 1 Part 2"
+  , examplePrompt: challenge1.examplePrompt
+  , exampleAnswer: "31"
+  , solver: solution2
+  , promptPath: "assets/day1.txt"
+  , solution: Just "18567089"
+  }
+
+solution2 :: String -> String
+solution2 input =
+  let
+    result = parse input
+    (l /\ r) = unzip result
+    m = Map.fromFoldableWith (+) (map (\x -> x /\ 1) r)
+  in
+    foldl
+      ( \a x ->
+          Map.lookup x m
+            # Maybe.fromMaybe 0
+            # (*) x
+            # (+) a
+      )
+      0
+      l
+      # show

@@ -20,6 +20,7 @@ import Test.Spec.Runner (runSpec)
 challenges :: Array Challenge
 challenges =
   [ Day1.challenge1
+  , Day1.challenge2
   ]
 
 main :: Effect Unit

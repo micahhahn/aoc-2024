@@ -29,6 +29,7 @@ to generate this file without the comments in this block.
     , "either"
     , "lists"
     , "tuples" 
+    , "ordered-collections"
     ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
