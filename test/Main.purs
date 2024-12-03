@@ -7,6 +7,7 @@ import Data.Maybe (Maybe(..))
 import Data.String (joinWith)
 import Data.Traversable (traverse_)
 import Day1 as Day1
+import Day2 as Day2
 import Effect (Effect)
 import Effect.Aff (launchAff_)
 import Effect.Class (liftEffect)
@@ -21,6 +22,7 @@ challenges :: Array Challenge
 challenges =
   [ Day1.challenge1
   , Day1.challenge2
+  , Day2.challenge1
   ]
 
 main :: Effect Unit
