@@ -42,7 +42,7 @@ challenge2 :: Challenge
 challenge2 =
   { name: "Day 2 Part 2"
   , examplePrompt: challenge1.examplePrompt
-  , exampleAnswer: "12"
+  , exampleAnswer: "4"
   , solver: solution2
   , promptPath: "assets/day2.txt"
   , solution: Just "337"
