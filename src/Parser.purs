@@ -20,7 +20,7 @@ import Data.Foldable (foldl)
 import Data.List.Types (toList)
 import Data.Tuple.Nested ((/\))
 import Parsing (ParseError(..), Parser, Position(..), position, runParser, ParserT)
-import Parsing.Combinators (many1, sepBy, manyIndex, many)
+import Parsing.Combinators (many1, sepBy, manyIndex, many, (<|>))
 import Parsing.Combinators.Array as A
 import Parsing.String (char, satisfy, string, anyTill)
 import Partial.Unsafe (unsafeCrashWith)

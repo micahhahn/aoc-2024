@@ -31,6 +31,7 @@ to generate this file without the comments in this block.
     , "tuples" 
     , "ordered-collections"
     , "lazy"
+    , "filterable"
     ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
