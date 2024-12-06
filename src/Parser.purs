@@ -6,6 +6,7 @@ module Parser
   , module Parsing.Combinators
   , module Parsing.String
   , newline
+  , notNewline
   , number
   , sepByArray
   , space
@@ -22,7 +23,7 @@ import Data.Tuple.Nested ((/\))
 import Parsing (ParseError(..), Parser, Position(..), position, runParser, ParserT)
 import Parsing.Combinators (many1, sepBy, manyIndex, many, (<|>))
 import Parsing.Combinators.Array as A
-import Parsing.String (char, satisfy, string, anyTill)
+import Parsing.String (char, satisfy, string, anyTill, anyChar, satisfy)
 import Partial.Unsafe (unsafeCrashWith)
 
 anyDigit :: Parser String Char
@@ -54,6 +55,9 @@ manyArray = A.many
 
 newline :: Parser String Char
 newline = char '\n'
+
+notNewline :: Parser String Char
+notNewline = satisfy ((/=) '\n')
 
 crashLeft :: ∀ a. Either ParseError a -> a
 crashLeft result =
