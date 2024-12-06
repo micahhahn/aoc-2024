@@ -32,6 +32,7 @@ to generate this file without the comments in this block.
     , "ordered-collections"
     , "lazy"
     , "filterable"
+    , "matrices"
     ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
